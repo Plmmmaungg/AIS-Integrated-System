@@ -9,7 +9,7 @@ export const register = async (req, res) => {
 
         res.status(201).json({
             success: true,
-            message: [{ result: 'A new account has been created!' }]
+            message: 'A new account has been created!'
         });
     } catch (e) {
         console.error(e);
@@ -34,8 +34,10 @@ export const login = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: [{ result: 'Login successful!', token }]
+            message: 'Login successful!',
+            token
         });
+
     } catch (e) {
         console.error(e);
         res.status(e.statusCode || 500).json({
